@@ -1,0 +1,14 @@
+add to readme:
+- chmod +x setup.sh required 
+- example adding to .zshrc
+- example of only running if in term eg if not vscode
+- setup.sh needs to refer to netcount script, what is the best way to do this?  can this be a relative path?
+
+add ansi
+  - should also change colors based on progress
+  - colors to text 
+where should db go?
+refactor any script call to ./scripts
+refactor format pkg -> could this be a basic pkg for text in terminal?
+
+
