@@ -1,5 +1,6 @@
 # DeskDay
 
+TODO: add screenshot here
 A lightweight macOS solution for tracking office attendance through network connectivity. DeskDay automatically logs when you're connected to your office network, making it easy to monitor your in-office days.
 
 ## How it Works
@@ -29,13 +30,13 @@ The system runs entirely locally and requires no external services.
 
 1. Clone this repository:
    ```bash
-   git clone github
-   cd DeskDay
+   git clone https://github.com/sgrumley/deskday.git
+   cd deskday
    ```
 
 2. Run the setup script:
    ```bash
-   ./setup.sh
+   make install
    ```
 
 This will:
@@ -49,16 +50,16 @@ This will:
 The SQLite database is created at:
 TODO: which dir is assets usually stored in
 ```
-~/repo/inoff/network_connections.db
+~/.local/share/deskday/network_connections.db
 ```
 
 ## Customization
 
-To monitor a different network, modify the SSID check in `netcount.sh`:
-TODO: update to env var
+To monitor your network set the environment variable
 
 ```bash
-if [ "$current_ssid" = "YOUR_NETWORK_NAME" ]; then
+# add to .zshrc or .bashrc
+export OFFICE_SSID="your-ssid"
 ```
 
 ## Troubleshooting
@@ -75,11 +76,6 @@ If the monitoring isn't working:
 2. Verify database permissions:
    ```bash
    ls -l ~/repo/inoff/network_connections.db
-   ```
-
-3. Check system logs:
-   ```bash
-   log show --predicate 'processImagePath contains "netcount"'
    ```
 
 ## Limitations
