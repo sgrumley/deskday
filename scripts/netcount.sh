@@ -6,7 +6,9 @@ init_database() {
     sqlite3 ~/.local/share/deskday/network_connections.db "CREATE TABLE IF NOT EXISTS connections (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-        ssid TEXT
+        ssid TEXT,
+        manual BOOL,
+        type TEXT
     );"
 }
 

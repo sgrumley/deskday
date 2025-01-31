@@ -19,6 +19,8 @@ type Connection struct {
 	ID        int
 	Timestamp string
 	SSID      string
+	Manual    bool
+	Type      string // Type of entry e.g. sick, annual ...
 }
 
 func (s *Store) GetWorkDayEntries() (int, error) {

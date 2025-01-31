@@ -3,15 +3,22 @@ package main
 import (
 	"database/sql"
 	"log"
+	"os/user"
+	"path/filepath"
+
+	_ "github.com/mattn/go-sqlite3"
 
 	"github.com/sgrumley/deskday/internal/service/display"
 	"github.com/sgrumley/deskday/internal/store"
-
-	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
-	db, err := sql.Open("sqlite3", "~/.local/share/deskday/network_connections.db")
+	usr, err := user.Current()
+	if err != nil {
+		log.Fatal(err)
+	}
+	dbPath := filepath.Join(usr.HomeDir, ".local/share/deskday/network_connections.db")
+	db, err := sql.Open("sqlite3", dbPath)
 	if err != nil {
 		log.Fatal(err)
 	}

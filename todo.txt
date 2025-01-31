@@ -2,13 +2,12 @@ add to readme:
 - chmod +x setup.sh required 
 - example adding to .zshrc
 - example of only running if in term eg if not vscode
-- setup.sh needs to refer to netcount script, what is the best way to do this?  can this be a relative path?
 
-add ansi
-  - should also change colors based on progress
-  - colors to text 
-where should db go?
-refactor any script call to ./scripts
 refactor format pkg -> could this be a basic pkg for text in terminal?
-
+Config from yaml
+ - write a package for tooling config
+ - Allow policy, colors, progress bar icons, ... 
+(policy should be percentage per time period eg. 50% per month
+API hitting for public holidays 
+Ability to manually enter into db (this is mainly for leave)
 
