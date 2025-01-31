@@ -1,6 +1,14 @@
+<div align="center">
+  <h3 align="center">DeskDay</h3>
+  <p align="center">
+        A lightweight solution for tracking in office days.
+  </p>
+</div>
+
+![Deskday Screenshot](deskday.png)
 # DeskDay
 
-TODO: add screenshot here
+
 A lightweight macOS solution for tracking office attendance through network connectivity. DeskDay automatically logs when you're connected to your office network, making it easy to monitor your in-office days.
 
 ## How it Works

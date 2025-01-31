@@ -3,11 +3,10 @@ add to readme:
 - example adding to .zshrc
 - example of only running if in term eg if not vscode
 
-refactor format pkg -> could this be a basic pkg for text in terminal?
 Config from yaml
  - write a package for tooling config
  - Allow policy, colors, progress bar icons, ... 
 (policy should be percentage per time period eg. 50% per month
-API hitting for public holidays 
-Ability to manually enter into db (this is mainly for leave)
+API hitting for public holidays?
+Ability to manually enter into db (this is mainly for leave)?
 
