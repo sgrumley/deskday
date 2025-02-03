@@ -1,8 +1,3 @@
-add to readme:
-- chmod +x setup.sh required 
-- example adding to .zshrc
-- example of only running if in term eg if not vscode
-
 Config from yaml
  - write a package for tooling config
  - Allow policy, colors, progress bar icons, ... 

@@ -26,8 +26,7 @@ The system runs entirely locally and requires no external services.
 - `setup.sh`: Installation script that sets up the LaunchAgent for automatic monitoring
 - `deskday`: Executable compiled from the go app
 - SQLite database: Stores connection timestamps (created automatically)
-- LaunchAgent: Ensures the monitoring script runs on network changes (TODO: this can be found at ...) the launch agent `com.user.networkmonitor` can be found at `~/Library/LaunchAgents/`
-
+- LaunchAgent: Ensures the monitoring script runs on network changes (TODO: this can be found at ...) 
 ## Prerequisites
 
 - macOS 
@@ -46,20 +45,32 @@ The system runs entirely locally and requires no external services.
    ```bash
    make install
    ```
-
+3. Add the path to go app for display on new terminal
+```bash
+# add to .zshrc or .bashrc
+~/path/to/deskday/deskday
+# alternatively you can `go install` to have it automatically on your path
+deskday
+```
 This will:
 - Make the monitoring script executable
 - Create and configure the LaunchAgent
 - Initialize the SQLite database
 - Start the monitoring service
+- Enable to binary to run when opening a new terminal
 
-## Database Location
+## Data Locations
 
-The SQLite database is created at:
-TODO: which dir is assets usually stored in
+All installed data lives in ~/.local/share
 ```
 ~/.local/share/deskday/network_connections.db
+~/.local/share/deskday/netcount.sh
 ```
+The agent can be found at `com.user.networkmonitor` can be found at 
+```
+~/Library/LaunchAgents/com.user.networkmonitor.plist
+```
+
 
 ## Customization
 
