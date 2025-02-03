@@ -28,7 +28,6 @@ func (s *Service) Out() error {
 	if err != nil {
 		return fmt.Errorf("sql broke: %w", err)
 	}
-	daysRecorded = 10
 
 	// TODO: get from config or user input??
 	policy := 50

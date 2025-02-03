@@ -30,5 +30,5 @@ init_database
 current_ssid=$(get_ssid)
 
 if [ "$current_ssid" = "${OFFICE_SSID}"]; then
-    sqlite3 ~/repo/inoff/network_connections.db "INSERT INTO connections (ssid) VALUES ('${current_ssid}');"
+    sqlite3 ~/local/share/deskday/network_connections.db "INSERT INTO connections (ssid) VALUES ('${current_ssid}');"
 fi
