@@ -9,7 +9,7 @@ init_database() {
     );"
 }
 # Create the LaunchAgent plist file that will trigger the script on each DNS update (network connection, lease renew, ...)
-cat << 'EOF' > ~/Library/LaunchAgents/com.user.networkmonitor.plist
+cat << EOF > ~/Library/LaunchAgents/com.user.networkmonitor.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -22,7 +22,7 @@ cat << 'EOF' > ~/Library/LaunchAgents/com.user.networkmonitor.plist
     </array>
     <key>WatchPaths</key>
     <array>
-        <string>/etc/resolv.conf</string>
+        <string>/var/run/resolv.conf</string>
     </array>
     <key>RunAtLoad</key>
     <true/>

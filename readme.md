@@ -14,7 +14,7 @@ A lightweight macOS solution for tracking office attendance through network conn
 ## How it Works
 
 DeskDay uses macOS's native system monitoring capabilities to:
-1. Detect network changes via `/etc/resolv.conf` file changes
+1. Detect network changes via `/var/run/resolv.conf` file changes
 2. Check if you're connected to the office network (This comes from env var `OFFICE_SSID`)
 3. Log connections to a SQLite database with timestamps
 
