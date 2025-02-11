@@ -1,7 +1,16 @@
 #!/bin/bash
 # netcount.sh
 
-# Function to create the SQLite database if it doesn't exist
+exec 1> /Users/${USER}/.local/share/deskday/logs/networkmonitor.log 2>&1
+echo "=== Script started at $(date) ==="
+set -x
+
+# Create log directory if it doesn't exist
+mkdir -p /Users/${USER}/.local/share/deskday/logs
+
+# Ensure directory exists
+mkdir -p ~/.local/share/deskday
+
 init_database() {
     sqlite3 ~/.local/share/deskday/network_connections.db "CREATE TABLE IF NOT EXISTS connections (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,5 +39,6 @@ init_database
 current_ssid=$(get_ssid)
 
 if [ "$current_ssid" = "${OFFICE_SSID}" ]; then
+    echo "Successfully inserted record"
     sqlite3 ~/.local/share/deskday/network_connections.db "INSERT INTO connections (ssid) VALUES ('${current_ssid}');"
 fi

@@ -1,3 +1,4 @@
+#!/bin/bash
 # setup.sh
 init_database() {
     sqlite3 ~/.local/share/deskday/network_connections.db "CREATE TABLE IF NOT EXISTS connections (
@@ -16,6 +17,11 @@ cat << EOF > ~/Library/LaunchAgents/com.user.networkmonitor.plist
 <dict>
     <key>Label</key>
     <string>com.user.networkmonitor</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>OFFICE_SSID</key>
+      <string>${OFFICE_SSID}</string>
+    </dict>
     <key>ProgramArguments</key>
     <array>
         <string>/Users/${USER}/.local/share/deskday/netcount.sh</string>
@@ -26,12 +32,16 @@ cat << EOF > ~/Library/LaunchAgents/com.user.networkmonitor.plist
     </array>
     <key>RunAtLoad</key>
     <true/>
+     <key>StandardOutPath</key>
+    <string>/Users/${USER}/.local/share/deskday/logs/networkmonitor.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/${USER}/.local/share/deskday/logs/networkmonitor.error.log</string>
 </dict>
 </plist>
 EOF
 
 # Make the script executable
-mkdir -p ~/.local/share/deskday
+mkdir -p ~/.local/share/deskday/logs
 cp -f ./scripts/netcount.sh ~/.local/share/deskday/netcount.sh
 chmod +x ~/.local/share/deskday/netcount.sh
 init_database
